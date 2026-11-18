@@ -12,3 +12,5 @@ Todo el juego esta en `index.html`. Funciona sin internet una vez abierto.
    (Android: menu > Instalar aplicacion. iPhone: Compartir > Anadir a pantalla de inicio).
 
 Al subir cambios, cambia `mus-v6` por `mus-v7` en `service-worker.js` para que los moviles actualicen.
+
+App ID: `/vr-mus` (manifest id, never change it)
