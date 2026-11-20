@@ -2,7 +2,6 @@
 <html lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mus</title>
-<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#1f6b3a"><link rel="apple-touch-icon" href="icon-192.png">
 <style>
 :root{--bg:#1f6b3a;--panel:#14502a;--ink:#fff;--card:#fffdf4;--cardink:#222;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14452a;--panel:#0d311d;--card:#f3efe0;color-scheme:dark}}
@@ -20,7 +19,7 @@ button:active{background:#e0d6a8}
 #bar b{font-size:1.7rem}
 #bar button{min-height:2.4rem;font-size:1rem;padding:.2rem .7rem}
 #seats{display:grid;grid-template-columns:1fr 1fr;gap:6px;align-items:start}#seats .p2{grid-column:1/3;grid-row:1;justify-self:center;width:55%}#seats .p3{grid-column:1;grid-row:2}#seats .p1{grid-column:2;grid-row:2}#lc{grid-column:2;grid-row:2;text-align:center;font-size:1.5rem;font-weight:800;align-self:center;color:#d7ffe0}
-.seat{background:var(--panel);border-radius:12px;padding:6px;text-align:center;font-size:.9rem}.mano{background:#ffd54a;color:#222;border-radius:10px;padding:0 6px;font-weight:800;white-space:nowrap}.mc{width:28px;height:42px;display:inline-block;border-radius:4px;overflow:hidden;border:1px solid #6b5a2a;background:#fffdf4}.mc svg{width:100%;height:100%;display:block}.mc .lb{display:none}.mc{width:34px;height:51px}.seat{overflow:hidden}.say{overflow-wrap:anywhere;line-height:1.2}#msg{line-height:1.3}#bar{flex-wrap:wrap}#msg{font-size:1.35rem}#msg .say{font-size:1.2rem;margin-bottom:4px}#chips{display:flex;gap:4px}.chip{flex:1;border-radius:8px;padding:3px 2px;text-align:center;font-size:.8rem;font-weight:700;background:#0004;line-height:1.2}.chip.g{background:#2e7d32}.chip.r{background:#b71c1c}.chip.p{outline:2px dashed #fffa}#sum{display:none;position:fixed;inset:0;overflow:auto;background:var(--bg);color:#fff;padding:12px max(12px,calc(50% - 310px));padding-top:calc(12px + env(safe-area-inset-top,0px))}#sum h2{margin:.2rem 0}#sum h3{margin:.8rem 0 .3rem}table{width:100%;border-collapse:collapse;font-size:1rem}td,th{padding:6px;border-bottom:1px solid #fff4;text-align:left;vertical-align:middle}tr.g td{background:#2e7d32}tr.r td{background:#b71c1c}#sum .mc{margin-right:1px;width:30px;height:45px}.jv{font-size:.95rem;flex-basis:100%;text-align:center}.seat.y{background:#c7a6ff;color:#2a1250}.seat.y .say{color:#4a1e8a}.seat.y .mano{background:#2a1250;color:#c7a6ff}#hand.y{outline:4px solid #c7a6ff;outline-offset:4px;border-radius:12px}tr.n td{background:#5a5a5a}.gt{color:#a5ffa5}.rt{color:#ffb0b0}#sum button{width:100%;margin:10px 0 20px}.cnt{display:flex;align-items:center;justify-content:center;gap:10px;font-size:2rem}.cnt button{min-width:0;width:3.4rem;padding:0}#btns button.og{background:#ff8a65}.ex{font-weight:700;margin-top:3px;font-size:.95rem}
+.seat{background:var(--panel);border-radius:12px;padding:6px;text-align:center;font-size:.9rem}.mano{background:#ffd54a;color:#222;border-radius:10px;padding:0 6px;font-weight:800;white-space:nowrap}.mc{width:28px;height:42px;display:inline-block;border-radius:4px;overflow:hidden;border:1px solid #6b5a2a;background:#fffdf4}.mc svg{width:100%;height:100%;display:block}.mc .lb{display:none}.mc{width:34px;height:51px}.seat{overflow:hidden}.say{overflow-wrap:anywhere;line-height:1.2}#msg{line-height:1.3}#bar{flex-wrap:wrap}#msg{font-size:1.35rem}#msg .say{font-size:1.2rem;margin-bottom:4px}#chips{display:flex;gap:4px}.chip{flex:1;border-radius:8px;padding:3px 2px;text-align:center;font-size:.8rem;font-weight:700;background:#0004;line-height:1.2}.chip.g{background:#2e7d32}.chip.r{background:#b71c1c}.chip.p{outline:2px dashed #fffa}#sum{display:none;position:fixed;inset:0;z-index:25;overflow:auto;background:var(--bg);color:#fff;padding:12px max(12px,calc(50% - 310px));padding-top:calc(12px + env(safe-area-inset-top,0px))}#sum h2{margin:.2rem 0}#sum h3{margin:.8rem 0 .3rem}table{width:100%;border-collapse:collapse;font-size:1rem}td,th{padding:6px;border-bottom:1px solid #fff4;text-align:left;vertical-align:middle}tr.g td{background:#2e7d32}tr.r td{background:#b71c1c}#sum .mc{margin-right:1px;width:30px;height:45px}.jv{font-size:.95rem;flex-basis:100%;text-align:center}.seat.y{background:#c7a6ff;color:#2a1250}.seat.y .say{color:#4a1e8a}.seat.y .mano{background:#2a1250;color:#c7a6ff}#hand.y{outline:4px solid #c7a6ff;outline-offset:4px;border-radius:12px}tr.n td{background:#5a5a5a}.gt{color:#a5ffa5}.rt{color:#ffb0b0}#sum button{width:100%;margin:10px 0 20px}.cnt{display:flex;align-items:center;justify-content:center;gap:10px;font-size:2rem}.cnt button{min-width:0;width:3.4rem;padding:0}#btns button.og{background:#ff8a65}.ex{font-weight:700;margin-top:3px;font-size:.95rem}
 .mini{display:flex;gap:2px;justify-content:center;margin:4px 0;flex-wrap:wrap}
 .bk{width:18px;height:26px;border-radius:3px;background:#b71c1c;border:2px solid #fff;display:inline-block}
 .m{background:var(--card);color:var(--cardink);border-radius:3px;padding:1px 3px;font-size:.8rem;font-weight:700}
@@ -40,7 +39,11 @@ button:active{background:#e0d6a8}
 .chip{height:2.7em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:.85rem}.chip.r,.chip.g{font-size:.85rem}
 @media (max-height:620px){#hand{min-height:0}.c{max-width:17%}}
 .seat{padding:4px}.seat .bk{width:13px;height:20px;border:1px solid #fff}.mini{min-height:22px;margin:2px 0}.seat .mc{width:14px;height:21px}.ml{min-height:1.4em}#bar{font-size:1.15rem;padding:4px 10px}#bar b{font-size:1.55rem}.jv{font-size:.85rem;white-space:nowrap;min-height:1.7em;display:flex;justify-content:center;align-items:center;gap:8px}.seat .bk{width:16px;height:24px}.acts{display:flex;flex-wrap:wrap;gap:8px;width:100%;justify-content:center}.act{background:#0006;border-radius:12px;padding:6px 12px;font-size:1.35rem;font-weight:800;line-height:1.2;white-space:nowrap}.act b{font-weight:600;font-size:1rem;opacity:.85;margin-right:6px}.act.me{outline:3px solid #fff}.chip.cur{outline:3px solid #fff}#modal{display:none;position:fixed;inset:0;background:#000b;align-items:center;justify-content:center;z-index:20;padding:16px}.mbox{background:var(--panel);border-radius:18px;padding:22px;max-width:440px;width:100%;text-align:center;display:flex;flex-direction:column;gap:14px}.mt{font-size:1.9rem;font-weight:800;line-height:1.3}#dif{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:auto 1rem 12px}#menu #dif button{margin:0;min-height:3rem;font-size:1rem;padding:.3rem;background:#0004;color:#fff}#menu #dif button.on{background:#f5efd8;color:#222;outline:3px solid #fff}
-</style></head><body>
+#game{position:relative}#cartel{display:none;position:absolute;left:50%;top:40%;transform:translate(-50%,-50%);z-index:15;width:min(88%,420px);background:var(--panel);border:3px solid #ffd54a;border-radius:18px;padding:14px 16px;text-align:center;font-size:1.35rem;font-weight:800;line-height:1.25;box-shadow:0 6px 24px #0008;pointer-events:none}
+#btns{height:calc(8rem + 8px)}#btns.bet{grid-template-rows:4.6rem 3.4rem}#btns.bet button{min-height:0}#btns.bet .big,#btns.bet .env{font-size:1.6rem;font-weight:800}#btns.bet .cnt b{font-size:2.1rem}#btns.bet .cnt button{width:3rem;height:100%}#btns.bet .og{font-size:1.2rem}#btns.bet button{white-space:nowrap}#btns.bet .env{font-size:1.45rem}#btns.bet button{font-size:1.3rem}#btns.bet .cnt button{font-size:1.8rem}#btns.bet .env{background:#ffd54a;color:#222}
+</style>
+</style><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#1f6b3a"><link rel="apple-touch-icon" href="icons/icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Mus"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head><body>
 <div id="menu">
 <h1>🃏 Mus</h1>
 <p class="s" id="vs" style="font-size:1.6rem"></p>
@@ -53,6 +56,7 @@ button:active{background:#e0d6a8}
 <div id="modal"></div>
 <div id="sum"></div>
 <div id="game">
+<div id="cartel"></div>
 <div id="bar"></div>
 <div id="chips"></div>
 <div id="seats"></div>
@@ -113,26 +117,13 @@ function sc(n,h){const r=rks(h),k=v=>r.filter(x=>x==v).length,T=[.1,.35,.6,.85,1
  return sum(h)/30}
 
 /* ---- jugadores artificiales ---- */
-function aiMus(p){const h=G.h[p],k=rks(h).filter(x=>x==12).length,pr=pares(h);
- const good=(jv(h)&&jstr(h)>=6)||k>=3||(pr&&pr.t>=2)||(G.d==2&&pr&&k>=2);
- if(G.d==0)return Math.random()<(good?.5:.2)?'nomus':'mus';
- return good?'nomus':'mus'}
-function aiDisc(p){const h=G.h[p],r=rks(h),c={};r.forEach(x=>c[x]=(c[x]||0)+1);
- if(G.d==0)return shuf([0,1,2,3]).slice(0,1+(Math.random()*3|0));
- const idx=[];h.forEach((x,i)=>{const v=r[i];if(!(v==12||c[v]>1||(G.d==2&&v==11&&r.includes(12))))idx.push(i)});return idx}
-function aiAct(p,n,mode,amt){
- const d=G.d,x=sc(n,G.h[p])+(Math.random()-.5)*[.5,.2,.08][d],r=Math.random();
- if(mode=='open'){
-  if(x>.97&&r<[0,.1,.3][d])return'ordago';
-  return(x>[.8,.65,.58][d]||(d==2&&r<.1&&n!='Pares'&&n!='Juego'))?'envido':'paso'}
- if(amt=='O')return x>[.92,.88,.82][d]?'quiero':'no';
- if(x>.97&&r<[0,.1,.3][d])return'ordago';
- if(x>[.85,.78,.72][d]&&amt<8&&r<.6)return'subo';
- return x>[.5,.45,.4][d]?'quiero':'no'}
+
+
+
 
 /* ---- interfaz ---- */
 function ask(msg,opts){return new Promise(res=>{G.msg=msg;G.opts=opts;G.res=res;render()})}
-function pick(v){const r=G.res;G.opts=[];G.res=null;if(r)r(v);render()}
+function pick(v){const r=G.res;G.opts=[];G.res=null;G.msg='';G.card='';if(r)r(v);render()}
 function tap(i){if(!G.dm)return;const k=G.sel.indexOf(i);k<0?G.sel.push(i):G.sel.splice(k,1);render()}
 function info(t){G.msg=t;render()}
 function say(p,t){G.say[p]=t;render()}
@@ -140,11 +131,12 @@ function render(){
  $('bar').innerHTML=`<span>Nosotros <b>${G.s[0]}</b></span><span>Ellos <b>${G.s[1]}</b></span><span class="jv">${G.mano==0?'<span class="mano">✋ Eres MANO</span> ':''}Juegos ${G.j[0]}-${G.j[1]} · Vacas ${G.v[0]}-${G.v[1]}</span>`;
  $('seats').innerHTML=[3,2,1].map(p=>`<div class="seat p${p}${(G.has||[]).includes(p)?' y':''}"><b>${p==G.mano?`<span class="mano">✋ ${NAMES[p]}</span>`:NAMES[p]}</b><div class="mini">${G.h[p].map(c=>G.rev?`<span class="mc">${cardSVG(c.v,c.s)}</span>`:'<i class="bk"></i>').join('')}</div><div class="say">${G.say[p]||'&nbsp;'}</div></div>`).join('');
  $('msg').innerHTML=(G.say[0]?`<div class="act me">${G.say[0]}</div>`:'')+(G.msg||'');
+ $('cartel').style.display=G.card?'block':'none';$('cartel').innerHTML=G.card||'';if(G.card){const m=$('msg');$('cartel').style.top=(m.offsetTop+m.offsetHeight/2)+'px'}
  $('hand').className=(G.has||[]).includes(0)?'y':'';
  $('chips').innerHTML=['Grande','Chica','Pares','Juego'].map((n,i)=>{const r=(G.rows||[]).find(x=>x.l==i&&!x.b);
   return `<div class="chip${r&&r.done&&r.t!=null?(r.t?' r':' g'):''}${G.lance==n||(i==3&&G.lance=='Punto')?' cur':''}">${r?r.n.split(' ')[0]:n}<br>${r?(r.c||r.bet):'-'}</div>`}).join('');
  $('hand').innerHTML=G.h[0].map((c,i)=>`<div class="c s${c.s}${G.sel.includes(i)?' sel':''}" onclick="tap(${i})">${cardSVG(c.v,c.s)}</div>`).join('');
- $('btns').innerHTML=G.bet&&G.opts.length?betUI():(G.opts||[]).map(([k,l])=>`<button onclick="pick('${k}')">${typeof l=='function'?l():l}</button>`).join('')}
+ $('btns').className=G.bet&&G.opts.length?'bet':'';$('btns').innerHTML=G.bet&&G.opts.length?betUI():(G.opts||[]).map(([k,l])=>`<button onclick="pick('${k}')">${typeof l=='function'?l():l}</button>`).join('')}
 function add(t,p){G.s[t]+=p;render();if(G.s[t]>=40)throw'fin'}
 
 /* ---- reglas ---- */
@@ -153,72 +145,10 @@ const sortH=h=>h.sort((a,b)=>rk(b.v)-rk(a.v)||a.s-b.s);
 async function humanDisc(){G.sel=[];G.dm=true;
  await ask('',[['ok',()=>G.sel.length?`Cambiar ${G.sel.length} carta${G.sel.length>1?'s':''}`:'No cambiar ninguna']]);
  G.dm=false;const s=[...G.sel];G.sel=[];return s}
-async function mus(){
- while(true){
-  G.lance='Mus';info('');
-  for(const p of ord(G.mano)){
-   let a;
-   if(p==0)a=await ask('',[['mus','Mus'],['nomus','No hay mus']]);
-   else{await sleep(900);a=aiMus(p)}
-   say(p,a=='mus'?'Mus':'No hay mus');
-   if(a=='nomus'){await sleep(1300);G.say=[];return}
-  }
-  await sleep(700);G.say=[];info('');
-  for(const p of ord(G.mano)){
-   const idx=p==0?await humanDisc():aiDisc(p),h=G.h[p];
-   [...idx].sort((a,b)=>b-a).forEach(i=>G.disc.push(h.splice(i,1)[0]));
-   while(h.length<4)h.push(draw());
-   sortH(h);G.say=[];
-   if(p) {say(p,idx.length?`Cambio ${idx.length}`:'No cambio');await sleep(800)}
-  }
-  G.say=[];
- }}
-async function act(p,n,mode,amt,owner){
- if(p!=0){await sleep(1000);return aiAct(p,n,mode,amt)}
- if(mode=='open')return ask(`${n}. ¿Qué haces?`,[['paso','Paso (no apuesto)'],['envido','Envido 2 piedras'],['ordago','¡Órdago!']]);
- if(amt=='O')return ask(`¡${NAMES[owner]} lanza un órdago! ¿Quieres?`,[['quiero','Quiero'],['no','No quiero']]);
- const o=[['quiero','Quiero'],['no','No quiero']];if(amt<8)o.push(['subo',`Subo a ${amt+2}`]);o.push(['ordago','¡Órdago!']);
- return ask(`${NAMES[owner]} envida ${amt} piedras. ¿Quieres?`,o)}
-async function betting(n,el){
- let first=null,kind;
- for(const p of el){const a=await act(p,n,'open',0);
-  if(a=='paso'){say(p,'Paso');continue}
-  first=p;kind=a;break}
- if(first===null)return{t:'pass'};
- let owner=first,cur=0,pend=kind=='ordago'?'O':2;
- say(owner,kind=='ordago'?'¡ÓRDAGO!':'Envido 2');
- while(true){
-  const r=ord((owner+1)%4).find(p=>el.includes(p)&&tm(p)!=tm(owner));
-  const a=await act(r,n,'resp',pend,owner);
-  if(a=='no'){say(r,'No quiero');await sleep(600);return{t:'dec',team:tm(owner),pts:Math.max(cur,1)}}
-  if(a=='quiero'){say(r,'¡Quiero!');await sleep(600);return pend=='O'?{t:'ord'}:{t:'acc',n:pend}}
-  if(a=='ordago'){say(r,'¡ÓRDAGO!');cur=pend;pend='O';owner=r;continue}
-  say(r,`Subo a ${pend+2}`);cur=pend;pend+=2;owner=r}}
-async function playLance(n){
- const o=ord(G.mano);G.say=[];G.lance=n;let el=o;
- if(n=='Pares'){el=o.filter(p=>pares(G.h[p]));info('Pares: '+(el.length?'tienen '+el.map(p=>NAMES[p]).join(', '):'nadie tiene'));await sleep(2200);if(!el.length)return}
- if(n=='Juego'){el=o.filter(p=>jv(G.h[p]));
-  if(el.length)info('Juego: tienen '+el.map(p=>NAMES[p]).join(', '));
-  else{n='Punto';G.lance=n;el=o;info('Nadie tiene juego. Se juega al Punto.')}
-  await sleep(2200)}
- const best=el.reduce((a,b)=>str(n,G.h[b])>str(n,G.h[a])?b:a),wt=tm(best);
- const mine=el.filter(p=>tm(p)==wt);
- const base=n=='Pares'?mine.reduce((a,p)=>a+pares(G.h[p]).t,0):n=='Juego'?mine.reduce((a,p)=>a+(sum(G.h[p])==31?3:2),0):0;
- const ts=new Set(el.map(tm));
- if(ts.size>1)info(n+'...');
- const res=ts.size>1?await betting(n,el):{t:'pass'};
- const adds=[];let txt=n+': ',ordago=false;
- if(res.t=='dec'){adds.push([res.team,res.pts]);txt+=`${W[res.team]} ganan ${res.pts} (no se quiso).`}
- else if(res.t=='acc'){adds.push([wt,res.n]);txt+=`${W[wt]} ganan ${res.n} piedras (${NAMES[best]}).`}
- else if(res.t=='ord'){ordago=true;txt+=`¡Órdago aceptado! Gana ${NAMES[best]} y ${W[wt]} ganan la partida.`}
- else if(n=='Pares'||n=='Juego')txt+=`${W[wt]} suman ${base} piedras.`;
- else{adds.push([wt,1]);txt+=`${W[wt]} ganan 1 piedra (${NAMES[best]}).`}
- if(base&&res.t!='pass')txt+=` Además, ${W[wt]} suman ${base} por ${n=='Pares'?'pares':'juego'}.`;
- if(base)adds.push([wt,base]);
- G.say=[];G.rev=ordago;
- await ask(txt,[['ok','Continuar']]);
- if(ordago)add(wt,40);
- adds.forEach(([t,p])=>add(t,p))}
+
+
+
+
 async function ronda(){
  G.deck=shuf((()=>{const d=[];for(let s=0;s<4;s++)for(const v of[1,2,3,4,5,6,7,10,11,12])d.push({v,s});return d})());
  G.disc=[];G.rev=false;G.say=[];G.h=[[],[],[],[]];G.rows=[];G.ordago=false;G.has=[];G.pub={};G.dn=[null,null,null,null];G.cut=null;G.shown=[];G.dec={};G.musd=[];G.rnd=0;
@@ -230,79 +160,25 @@ async function ronda(){
  G.rev=true;
  G.lance='Fin';await summary()}
 /* ---- apuestas: importes a elegir y los dos rivales pueden responder ---- */
-function aiAct(p,n,mode,amt){
- const d=G.d,x=sc(n,G.h[p])+(Math.random()-.5)*[.5,.2,.08][d],r=Math.random();
- const big=x>.9&&d>0&&r<.5?'5':'2';
- if(mode=='open'){
-  if(x>.97&&r<[0,.1,.3][d])return'ordago';
-  return(x>[.8,.65,.58][d]||(d==2&&r<.1&&n!='Pares'&&n!='Juego'))?'e'+big:'paso'}
- if(amt=='O')return x>[.92,.88,.82][d]?'quiero':'no';
- if(x>.97&&r<[0,.1,.3][d])return'ordago';
- if(x>[.85,.78,.72][d]&&amt<20&&r<.6)return'r'+big;
- return x>[.5,.45,.4][d]+(amt>5?.1:0)?'quiero':'no'}
+
 async function act(p,n,mode,amt,owner){
  if(p!=0){await sleep(1000);return aiAct(p,n,mode,amt)}
  if(mode=='open'){G.bet={n:2,min:2,mode:'open'};const v=await ask('',[['x','']]);G.bet=null;return v};
- if(amt=='O')return ask(`¡${NAMES[owner]} lanza un órdago! ¿Quieres?`,[['quiero','Quiero'],['no','No quiero']]);
+ if(amt=='O'){G.card=`¡${NAMES[owner]} lanza un órdago!<br>¿Quieres?`;return ask('',[['quiero','Quiero'],['no','No quiero']])}
  {G.bet={n:2,min:1,mode:'resp'};const v=await ask('',[['x','']]);G.bet=null;return v}}
-async function betting(n,el){
- let first=null,kind;
- for(const p of el){const a=await act(p,n,'open',0);
-  if(a=='paso'){say(p,'Paso');continue}
-  first=p;kind=a;break}
- if(first===null)return{t:'pass'};
- let owner=first,cur=0,pend=kind=='ordago'?'O':+kind.slice(1);
- say(owner,pend=='O'?'¡ÓRDAGO!':'Envido '+pend);
- while(true){
-  const rs=ord((owner+1)%4).filter(p=>el.includes(p)&&tm(p)!=tm(owner));
-  let a='no',r=rs[0];
-  for(const q of rs){r=q;G.cur=cur;G.bettor=owner;a=await act(q,n,'resp',pend,owner);if(a!='no')break;say(q,'No quiero')}
-  if(a=='no'){await sleep(600);return{t:'dec',team:tm(owner),pts:Math.max(cur,1)}}
-  if(a=='quiero'){say(r,'¡Quiero!');await sleep(600);return pend=='O'?{t:'ord'}:{t:'acc',n:pend}}
-  if(a=='ordago'){say(r,'¡ÓRDAGO!');cur=pend;pend='O';owner=r;continue}
-  const k=+a.slice(1);say(r,`Subo ${k} más`);cur=pend;pend+=k;owner=r}}
+
 /* ---- IA mas dura: simula manos posibles para estimar si gana su pareja ---- */
-function wp(p,n,N){const mine=G.h[p],ks=new Set(mine.map(c=>c.v+'-'+c.s)),un=[];
- for(let s=0;s<4;s++)for(const v of[1,2,3,4,5,6,7,10,11,12])if(!ks.has(v+'-'+s))un.push({v,s});
- const has=h=>n=='Pares'?!!pares(h):n=='Juego'?jv(h):true,o=ord(G.mano);let w=0;
- for(let i=0;i<N;i++){const u=shuf([...un]),hs={};let k=0;
-  for(let q=0;q<4;q++)hs[q]=q==p?mine:u.slice(4*k++,4*k);
-  let b=null;for(const q of o){if(!has(hs[q]))continue;if(b===null||str(n,hs[q])>str(n,hs[b]))b=q}
-  if(b!==null&&tm(b)==tm(p))w++}
- return w/N}
-function aiMus(p){const h=G.h[p],b=Math.max(sc('Grande',h),sc('Chica',h),sc('Pares',h),sc('Juego',h));
- if(G.d==0)return Math.random()<(b>=.85?.6:.2)?'nomus':'mus';
- if(Math.max(G.s[0],G.s[1])>=30)return'nomus';return b>=(G.d==2?.75:.85)?'nomus':'mus'}
-function aiDisc(p){const h=G.h[p],r=rks(h),c={};r.forEach(x=>c[x]=(c[x]||0)+1);
- if(G.d==0)return shuf([0,1,2,3]).slice(0,1+(Math.random()*3|0));
- if(jv(h)&&jstr(h)>=7)return[];
- const idx=[];h.forEach((x,i)=>{const v=r[i];if(!(v==12||c[v]>1||(G.d==2&&v==11&&r.includes(12))))idx.push(i)});
- if(G.d==2&&idx.length==4)idx.shift();return idx}
-function aiAct(p,n,mode,amt){
- const d=G.d,r=Math.random();
- let w=d==0?Math.min(1,Math.max(0,sc(n,G.h[p])+(r-.5)*.2)):wp(p,n,d==1?80:250);
- if(mode=='resp'&&d>0)w-=d==2?.07:.04;
- const beh=G.s[1-tm(p)]-G.s[tm(p)],ag=beh>=10?Math.min(.2,(beh-8)*.012):0;w+=ag;
- const me=G.s[tm(p)],op=G.s[1-tm(p)],lead=me>=30&&me-op>=8,hard=op>=30||op-me>=15;if(hard)w+=.08;
- const big=w>.8&&Math.random()<.6?'5':'2',bl=d==2&&Math.random()<.12+ag*1.5&&n!='Pares'&&n!='Juego';
- if(mode=='open'){
-  if(lead)return w>.8&&r<.7?'ordago':'paso';
-  if(hard&&w>.72&&r<.6)return'ordago';
-  if(w>[.97,.93,.9][d]&&r<.5)return'ordago';
-  return(w>[.58,.55,.52][d]||bl)?'e'+big:'paso'}
- if(amt=='O')return w>[.88,.82,.75][d]?'quiero':'no';
- if(w>[.97,.93,.9][d]&&r<.5)return'ordago';
- if(hard&&w>.72&&r<.6)return'ordago';
- if(lead)return w>.85?'ordago':w>.45?'quiero':'no';
- if(w>[.8,.74,.7][d]&&amt<20&&r<.7)return'r'+big;
- return w>[.45,.43,.4][d]+(amt>5?.08:0)?'quiero':'no'}
+
+
+
+
 /* ---- lances: lo visto se cuenta al final, lo no querido se cobra al momento ---- */
 async function playLance(n){
  const o=ord(G.mano),li=['Grande','Chica','Pares','Juego'].indexOf(n);G.say=[];G.lance=n;G.has=[];let el=o;
  if(n=='Pares'||n=='Juego'){
   el=o.filter(p=>n=='Pares'?pares(G.h[p]):jv(G.h[p]));G.dec[n]=el;
   if(!el.length&&n=='Pares'){G.rows.push({l:li,n,bet:'-',c:'Nadie',t:null,p:0,done:true});info('');await sleep(1800);return}
-  if(!el.length){n='Punto';G.lance=n;el=o;info('')}
+  if(!el.length){n='Punto';G.lance=n;el=o;info('');await cartel('Nadie tiene juego<br>Se juega al punto',2000)}
   else{G.has=el;info('')}
   await sleep(2200)}
  const best=el.reduce((a,b)=>str(n,G.h[b])>str(n,G.h[a])?b:a),wt=tm(best),mine=el.filter(p=>tm(p)==wt);
@@ -320,23 +196,10 @@ async function playLance(n){
  const bT=res.t=='dec'?res.team:wt,bB=(n=='Pares'||n=='Juego')?el.filter(p=>tm(p)==bT).reduce((a,p)=>a+(n=='Pares'?pares(G.h[p]).t:(sum(G.h[p])==31?3:2)),0):0;if(bB&&!G.ordago)G.rows.push({b:1,l:li,n:n+' (cartas)',bet:'',t:bT,p:bB,done:false});
  G.say=[];info('');await sleep(1600);
  if(res.t=='dec')add(res.team,res.pts)}
-async function summary(){
- G.rev=true;G.opts=[];G.msg='Fin de la mano';render();
- const pend=G.rows.filter(r=>!r.done),tot=[0,0];G.rows.forEach(r=>{if(r.t!=null)tot[r.t]+=r.p});
- const cl=t=>t==null?'':t?'r':'g';
- const rows=G.rows.map(r=>`<tr class="${cl(r.t)}"><td>${r.n}</td><td>${r.bet}</td><td>${r.t==null?'-':W[r.t]+(r.who&&!r.done?' ('+r.who+')':'')}</td><td>${r.p}</td></tr>`).join('');
- const hands=[0,2,1,3].map(p=>`<tr class="${cl(tm(p))}"><td><b>${NAMES[p]}</b></td><td>${G.h[p].map(c=>`<span class="mc">${cardSVG(c.v,c.s)}</span>`).join('')}<div class="ex">${exs(G.h[p])}</div></td></tr>`).join('');
- $('sum').innerHTML=`<h2>Resumen de la mano</h2><table><tr><th>Lance</th><th>Apuesta</th><th>Gana</th><th>Piedras</th></tr>${rows}</table><h3>Cartas</h3><table>${hands}</table><p style="font-size:1.2rem">Esta mano: <b class="gt">Nosotros ${tot[0]}</b> · <b class="rt">Ellos ${tot[1]}</b></p><button onclick="pick('ok')">Siguiente mano</button>`;
- $('sum').style.display='block';$('sum').scrollTop=0;
- await new Promise(r=>{G.res=r});
- $('sum').style.display='none';
- pend.forEach(r=>add(r.t,r.p))}
-function betUI(){const b=G.bet,o=b.mode=='open';
- const og='<button class="og" onclick="pick(\'ordago\')">¡Órdago!</button>';
- const top=o?'<button onclick="pick(\'paso\')">Paso</button>':'<button onclick="pick(\'quiero\')">Quiero</button><button onclick="pick(\'no\')">No quiero</button>';
- return top+(o?og:'')+`<div class="cnt"><button onclick="cnt(-1)">−</button><b>${b.n}</b><button onclick="cnt(1)">+</button></div><button onclick="pick('${o?'e':'r'}${b.n}')">${o?'Envidar '+b.n:'Subir '+b.n+' más'}</button>`+(o?'':og)}
+
+
 function cnt(d){G.bet.n=Math.max(G.bet.min,Math.min(30,G.bet.n+d));render()}
-function exs(h){return [pares(h)?`Pares +${pares(h).t}`:'',jv(h)?`Juego +${sum(h)==31?3:2}`:''].filter(Boolean).join(' · ')||'Sin pares ni juego'}
+
 function exs(h,p){const bw=k=>{const r=G.rows.find(x=>x.b&&x.n.startsWith(k));return r?r.t:null},a=[];
  if(pares(h))a.push([`Pares +${pares(h).t}`,tm(p)==bw('Pares')]);
  if(jv(h))a.push([`Juego +${sum(h)==31?3:2}`,tm(p)==bw('Juego')]);
@@ -355,16 +218,7 @@ async function summary(){
  pend.forEach(r=>add(r.t,r.p))}
 function nuevosRivales(){const pl=shuf(['Adrián','Alejandro','Justo','Daniel','Isabel','Mere']);NAMES[1]=pl[0];NAMES[3]=pl[1];
  $('vs').innerHTML=`Juegas con <b>Víctor</b> contra <b>${pl[0]}</b> y <b>${pl[1]}</b>.`}
-async function jugar(d){
- G={d,s:[0,0],mano:Math.random()*4|0,h:[[],[],[],[]],say:[],opts:[],msg:'',sel:[],rev:false,dm:false};
- 
- $('menu').style.display='none';$('game').style.display='flex';render();
- 
- try{while(true){await ronda();G.mano=(G.mano+1)%4}}
- catch(e){if(e!=='fin')throw e}
- G.rev=true;G.say=[];
- await ask(G.s[0]>=40?'¡Ganasteis! 🎉 Enhorabuena.':`Han ganado ${NAMES[1]} y ${NAMES[3]}. ¡Otra vez será!`,[['ok','Jugar otra vez']]);
- nuevosRivales();$('game').style.display='none';$('menu').style.display='flex'}
+
 const JV=2; /* juegos que hay que ganar para llevarse una vaca (al mejor de 3) */
 async function jugar(d){
  G={d,s:[0,0],mano:Math.random()*4|0,h:[[],[],[],[]],say:[],opts:[],msg:'',sel:[],rev:false,dm:false,j:[0,0],v:[0,0],rows:[]};
@@ -379,32 +233,14 @@ async function jugar(d){
   else await modal(`<b>Juego para ${W[t]}</b><br>Juegos: Nosotros ${G.j[0]} – Ellos ${G.j[1]}`,[['ok','Siguiente juego']]);
   G.s=[0,0];G.h=[[],[],[],[]]}}
 function betUI(){const b=G.bet,o=b.mode=='open',s=n=>`style="grid-column:span ${n}"`;
- const og=`<button class="og" ${s(o?3:2)} onclick="pick('ordago')">¡Órdago!</button>`;
- const c=`<div class="cnt" ${s(3)}><button onclick="cnt(-1)">−</button><b>${b.n}</b><button onclick="cnt(1)">+</button></div>`;
- const m=`<button ${s(3)} onclick="pick('${o?'e':'r'}${b.n}')">${o?'Envidar '+b.n:'Subir '+b.n+' más'}</button>`;
- return o?`<button ${s(3)} onclick="pick('paso')">Paso</button>${og}${c}${m}`:`<button ${s(2)} onclick="pick('quiero')">Quiero</button><button ${s(2)} onclick="pick('no')">No quiero</button>${og}${c}${m}`}
+ const og=`<button class="og" ${s(o?2:2)} onclick="pick('ordago')">¡Órdago!</button>`;
+ const c=`<div class="cnt" ${s(o?3:2)}><button onclick="cnt(-1)">−</button><b>${b.n}</b><button onclick="cnt(1)">+</button></div>`;
+ const m=`<button class="env" ${s(o?3:2)} onclick="pick('${o?'e':'r'}${b.n}')">${o?'Envidar '+b.n:'Subir '+b.n}</button>`;
+ return o?`${c}${m}<button ${s(4)} onclick="pick('paso')">Paso</button>${og}`:`<button class="big" ${s(3)} onclick="pick('quiero')">Quiero</button><button class="big" ${s(3)} onclick="pick('no')">No quiero</button>${c}${m}${og}`}
 /* ---- IA estilo profesional: probabilidad de ganar el lance + valor esperado ---- */
-function gwin(a,b){return 1/(1+Math.exp(-(a-b)/8))}
-function wp(p,n,N,c){const mine=G.h[p],ks=new Set(mine.map(x=>x.v+'-'+x.s)),un=[];
- for(let s=0;s<4;s++)for(const v of[1,2,3,4,5,6,7,10,11,12])if(!ks.has(v+'-'+s))un.push({v,s});
- const has=h=>n=='Pares'?!!pares(h):n=='Juego'?jv(h):true,o=ord(G.mano),thr=(n=='Grande'||n=='Chica')?.33:.4;let w=0;
- for(let i=0;i<N;i++){let hs,k;
-  for(let t=0;t<8;t++){const u=shuf([...un]);hs={};k=0;for(let q=0;q<4;q++)hs[q]=q==p?mine:u.slice(4*k++,4*k);if(c==null||c==p||sc(n,hs[c])>=thr)break}
-  let b=null;for(const q of o){if(!has(hs[q]))continue;if(b===null||str(n,hs[q])>str(n,hs[b]))b=q}
-  if(b!==null&&tm(b)==tm(p))w++}
- return w/N}
-function aiAct(p,n,mode,amt){
- const t=tm(p),me=G.s[t],op=G.s[1-t],prog=Math.max(me,op)/40,r=Math.random(),g=gwin(me,op);
- const w=wp(p,n,220,mode=='resp'?G.bettor:null),strong=w>.85,c=Math.max(1,G.cur||0);
- if(mode=='open'){
-  if(prog>=.5&&w>.9&&w>g+.06&&r<.8)return'ordago';
-  const bluff=Math.random()<.03+.07*prog&&w>.3&&w<.5&&n!='Pares'&&n!='Juego';
-  if(w>.7-.1*prog||bluff)return(strong&&Math.random()<.5)?'e5':'e2';
-  return'paso'}
- if(amt=='O')return w>gwin(me,op+c)+.02?'quiero':'no';
- if(prog>=.5&&w>.9&&w>g+.06&&r<.6)return'ordago';
- if(w>.8&&amt<20&&r<.5)return'r'+(strong&&Math.random()<.5?5:2);
- return(2*w-1)*amt>-c*.9?'quiero':'no'}
+
+
+
 /* ---- fase de mus mas lenta: los cambios quedan a la vista ---- */
 function cambia(p,idx){const h=G.h[p];[...idx].sort((a,b)=>b-a).forEach(i=>G.disc.push(h.splice(i,1)[0]));while(h.length<4)h.push(draw());sortH(h);G.say[p]=idx.length?`Cambio ${idx.length}`:'No cambio';render()}
 async function mus(){
@@ -426,52 +262,22 @@ async function mus(){
   await sleep(2200);G.say=[];
  }}
 function modal(html,opts){return new Promise(res=>{G.mres=res;$('modal').innerHTML=`<div class="mbox"><div class="mt">${html}</div>${opts.map(([k,l])=>`<button onclick="mpick('${k}')">${l}</button>`).join('')}</div>`;$('modal').style.display='flex'})}
+async function cartel(html,ms){G.card=html;render();await sleep(ms);G.card='';render()}
 function mpick(k){$('modal').style.display='none';const r=G.mres;G.mres=null;if(r)r(k)}
 /* ---- IA con memoria de cartas, inferencia de lo publico y modelo del rival ---- */
 let DIF=4;try{const v=localStorage.getItem('mus_dif');if(v!==null&&[0,1,2,3,4].includes(+v))DIF=+v}catch(e){}
 function setDif(i){DIF=i;try{localStorage.setItem('mus_dif',i)}catch(e){}pintaDif()}
-function pintaDif(){$('dif').innerHTML=['Fácil','Normal','Difícil','Experto','Perfecto'].map((t,i)=>`<button class="${i==DIF?'on':''}" onclick="setDif(${i})">${t}</button>`).join('')}
+function pintaDif(){$('dif').innerHTML='<div style="grid-column:1/-1;text-align:center;font-size:1.1rem;opacity:.9">Nivel: Perfecto</div>'}
 function gwin(a,b){if(a>=40)return 1;if(b>=40)return 0;const r=((40-a)+(40-b))/2;return 1/(1+Math.exp(-1.7*(a-b)/(3*Math.sqrt(r))))}
 function ST(p){G.st=G.st||[0,1,2,3].map(()=>({o:0,b:0,r:0,a:0,u:0,s:0}));return G.st[p]}
-function lik(n,q,h,mod){const pb=G.pub[n]&&G.pub[n][q],s=sc(n,h),st=ST(q),br=mod?(st.u+.5)/(st.s+3):.08;let L=1;
- if(pb=='paso')L*=.3+.7*(1-s);else if(pb=='no')L*=.2+.8*(1-s);else if(pb=='quiero')L*=.25+.75*s;else if(pb)L*=br+(1-br)*(.12+.88*s);
- const ql=Math.max(sc('Grande',h),sc('Chica',h),sc('Pares',h),sc('Juego',h)),dn=G.dn[q];
- if(dn===0)L*=.15+.85*ql;else if(dn===1)L*=.4+.6*ql;
- if(G.cut===q)L*=.25+.75*ql;return L}
-function wpi(p,n,N,inf,mod){const mine=G.h[p],ks=new Set(mine.map(x=>x.v+'-'+x.s)),un=[];
- for(let s=0;s<4;s++)for(const v of[1,2,3,4,5,6,7,10,11,12])if(!ks.has(v+'-'+s))un.push({v,s});
- const has=h=>n=='Pares'?!!pares(h):n=='Juego'?jv(h):true,o=ord(G.mano);let W=0,S=0;
- for(let i=0;i<N;i++){const u=shuf([...un]),hs={};let k=0,wt=1;
-  for(let q=0;q<4;q++){hs[q]=q==p?mine:u.slice(4*k++,4*k);if(inf&&q!=p)wt*=lik(n,q,hs[q],mod)}
-  let b=null;for(const q of o){if(!has(hs[q]))continue;if(b===null||str(n,hs[q])>str(n,hs[b]))b=q}
-  S+=wt;if(b!==null&&tm(b)==tm(p))W+=wt}
- return S>1e-9?W/S:.5}
+
+
 function pAcc(p,mod){if(!mod)return .62;const o=[0,1,2,3].filter(q=>tm(q)!=tm(p));return o.reduce((a,q)=>{const s=ST(q);return a+(s.a+4)/(s.r+6.15)},0)/o.length}
-function aiAct(p,n,mode,amt){
- const d=G.d,t=tm(p),me=G.s[t],op=G.s[1-t],g=gwin(me,op),W=(a,b)=>gwin(me+a,op+b),r=Math.random();
- let w=d==0?sc(n,G.h[p])+(r-.5)*.3:wpi(p,n,[0,70,150,250,420][d],d>=2,d>=3);
- w=Math.min(1,Math.max(0,w+(Math.random()-.5)*[.3,.14,.08,.03,0][d]));
- if(d==0){if(mode=='open')return w>.75?'e2':'paso';if(amt=='O')return w>.9?'quiero':'no';return w>.5?'quiero':'no'}
- const pa=pAcc(p,d>=3),lam=.003+.005*(1-Math.min(1,Math.max(me,op)/27)),adv=k=>Math.max(0,w-k*Math.min(1,3*(1-w))),best=o=>Object.entries(o).sort((a,b)=>b[1]-a[1])[0][0];
- const vWin=(S,x)=>x*W(S,0)+(1-x)*W(0,S),vBet=(S,q)=>q*vWin(S,adv(.15))+(1-q)*W(1,0)-lam*S,vOrd=q=>q*adv(.3)+(1-q)*W(1,0)-(Math.max(me,op)<20?.2:Math.max(me,op)<30?.06:0);
- if(mode=='open')return best({paso:(n=='Pares'||n=='Juego')?g:vWin(1,w),e2:vBet(2,pa),e5:vBet(5,pa*.85),ordago:vOrd(pa*.4)});
- const c=Math.max(1,G.cur||0),vd=W(0,c);
- if(amt=='O')return w>vd?'quiero':'no';
- const o={quiero:vWin(amt,w),no:vd,ordago:vOrd(pa*.4)};
- if(amt<26){const wa=adv(.2);o.r2=pa*vWin(amt+2,wa)+(1-pa)*W(amt,0)-lam*2;o.r5=pa*.8*vWin(amt+5,wa)+(1-pa*.8)*W(amt,0)-lam*5}
- return best(o)}
-function aiMus(p){const h=G.h[p],d=G.d,b=Math.max(sc('Grande',h),sc('Chica',h),sc('Pares',h),sc('Juego',h));
- if(d==0)return Math.random()<(b>=.85?.6:.2)?'nomus':'mus';
- if(Math.max(G.s[0],G.s[1])>=30)return'nomus';
- return b>=[0,.85,.75,.72,.7][d]?'nomus':'mus'}
+
+
 /* ---- IA v3: descarte por valor esperado, lo declarado (pares/juego) es informacion, extras en el valor ---- */
 const lv=p=>G.dT?G.dT[tm(p)]:G.d;
-function lik(n,q,h,mod){const st=ST(q),br=mod?(st.u+1)/(st.s+12):.08;let L=1;
- for(const m in G.pub){const pb=G.pub[m][q];if(!pb)continue;const s=sc(m,h);
-  if(pb=='paso')L*=.3+.7*(1-s);else if(pb=='no')L*=.2+.8*(1-s);else if(pb=='quiero')L*=.25+.75*s;else L*=br+(1-br)*(.12+.88*s)}
- const ql=Math.max(sc('Grande',h),sc('Chica',h),sc('Pares',h),sc('Juego',h)),dn=G.dn[q];
- if(dn===0)L*=.15+.85*ql;else if(dn===1)L*=.4+.6*ql;
- if(G.cut===q)L*=.25+.75*ql;return L}
+
 function wpi(p,n,N,inf,mod){const mine=G.h[p],ks=new Set(mine.map(x=>x.v+'-'+x.s)),un=[];
  for(let s=0;s<4;s++)for(const v of[1,2,3,4,5,6,7,10,11,12])if(!ks.has(v+'-'+s))un.push({v,s});
  const has=h=>n=='Pares'?!!pares(h):n=='Juego'?jv(h):true,o=ord(G.mano),D=G.dec||{};
@@ -483,53 +289,89 @@ function wpi(p,n,N,inf,mod){const mine=G.h[p],ks=new Set(mine.map(x=>x.v+'-'+x.s
   let b=null;for(const q of o){if(!has(hs[q]))continue;if(b===null||str(n,hs[q])>str(n,hs[b]))b=q}
   S+=wt;if(b!==null&&tm(b)==tm(p))W+=wt}
  return S>1e-9?W/S:.5}
-function hv(h){const pr=pares(h);return sc('Grande',h)+sc('Chica',h)+1.3*(pr?[0,.7,1.1,1.5][pr.t]:0)+1.6*(jv(h)?jstr(h)/8+.3:sum(h)/60)}
-function bestDisc(p,N){const h=G.h[p],ks=new Set(h.map(x=>x.v+'-'+x.s)),un=[];
- for(let s=0;s<4;s++)for(const v of[1,2,3,4,5,6,7,10,11,12])if(!ks.has(v+'-'+s))un.push({v,s});
- let bi=[],bv=-1;
- for(let m=0;m<16;m++){const keep=h.filter((_,i)=>!(m>>i&1)),nd=4-keep.length;let tot=0;
-  if(!nd)tot=hv(h);else{for(let t=0;t<N;t++)tot+=hv(keep.concat(shuf([...un]).slice(0,nd)));tot/=N}
-  if(tot>bv+1e-9){bv=tot;bi=[0,1,2,3].filter(i=>m>>i&1)}}
- return{idx:bi,v:bv}}
-function aiDisc(p){const d=lv(p),h=G.h[p],r=rks(h),c={};r.forEach(x=>c[x]=(c[x]||0)+1);
- if(d>=2)return bestDisc(p,[0,0,30,50,80][d]).idx;
- if(d==0)return shuf([0,1,2,3]).slice(0,1+(Math.random()*3|0));
- const idx=[];h.forEach((x,i)=>{const v=r[i];if(!(v==12||c[v]>1))idx.push(i)});return idx}
-function aiMus(p){const h=G.h[p],d=lv(p),b=Math.max(sc('Grande',h),sc('Chica',h),sc('Pares',h),sc('Juego',h));
- if(d==0)return Math.random()<(b>=.85?.6:.2)?'nomus':'mus';
- if(Math.max(G.s[0],G.s[1])>=30)return'nomus';
- if(d<2)return b>=.85?'nomus':'mus';
- return hv(h)>=bestDisc(p,40).v-.05?'nomus':'mus'}
+
+
+
+
 function exv(p,L){const dl=(G.dec&&G.dec[L])||[],t=tm(p);let a=0,b=0;
  for(const q of dl){const v=q==p?(L=='Pares'?pares(G.h[p]).t:(sum(G.h[p])==31?3:2)):(L=='Pares'?1.4:2.4);if(tm(q)==t)a+=v;else b+=v}return[a,b]}
-function aiAct(p,n,mode,amt){
- const d=lv(p),t=tm(p),me=G.s[t],op=G.s[1-t],W=(a,b)=>gwin(me+a,op+b),r=Math.random();
- let w=d==0?sc(n,G.h[p])+(r-.5)*.3:wpi(p,n,[0,70,160,320,600][d],d>=2,d>=3);
- w=Math.min(1,Math.max(0,w+(Math.random()-.5)*[.3,.14,.08,.03,0][d]));
- if(d==0){if(mode=='open')return w>.75?'e2':'paso';if(amt=='O')return w>.9?'quiero':'no';return w>.5?'quiero':'no'}
- const pa=pAcc(p,d>=3),lam=.003+.005*(1-Math.min(1,Math.max(me,op)/27)),adv=k=>Math.max(0,w-k*Math.min(1,3*(1-w))),best=o=>Object.entries(o).sort((a,b)=>b[1]-a[1])[0][0];
- const [Em,Eo]=(n=='Pares'||n=='Juego')?exv(p,n):[0,0];
- const vWin=(S,x)=>x*W(S+Em,0)+(1-x)*W(0,S+Eo),vBet=(S,q)=>q*vWin(S,adv(.15))+(1-q)*W(1+Em,0)-lam*S,vOrd=q=>q*adv(.3)+(1-q)*W(1+Em,0)-(Math.max(me,op)<20?.2:Math.max(me,op)<30?.06:0);
- if(mode=='open')return best({paso:(n=='Pares'||n=='Juego')?vWin(0,w):vWin(1,w),e2:vBet(2,pa),e5:vBet(5,pa*.85),ordago:vOrd(pa*.4)});
- const c=Math.max(1,G.cur||0),vd=W(0,c+Eo);
- if(amt=='O')return w>vd?'quiero':'no';
- const o={quiero:vWin(amt,w),no:vd,ordago:vOrd(pa*.4)},wa=adv(.2);
- if(amt<26){o.r2=pa*vWin(amt+2,wa)+(1-pa)*W(amt+Em,0)-lam*2;o.r5=pa*.8*vWin(amt+5,wa)+(1-pa*.8)*W(amt+Em,0)-lam*5}
- return best(o)}
+
 /* lo que se deduce del mus: cuantas cartas cambio cada uno y quien dijo mus justo antes del corte */
 function lik(n,q,h,mod){const st=ST(q),br=mod?(st.u+1)/(st.s+12):.08,on=!G.flag||G.flag[tm(G.ep)];let L=1;
  for(const m in G.pub){const pb=G.pub[m][q];if(!pb)continue;const s=sc(m,h);
   if(pb=='paso')L*=.3+.7*(1-s);else if(pb=='no')L*=.2+.8*(1-s);else if(pb=='quiero')L*=.25+.75*s;else L*=br+(1-br)*(.12+.88*s)}
  const ql=Math.max(sc('Grande',h),sc('Chica',h),sc('Pares',h),sc('Juego',h)),dn=G.dn[q];
- if(dn===0)L*=.15+.85*ql;else if(dn===1)L*=.4+.6*ql;else if(on&&dn===2)L*=.7+.3*ql;
- if(G.cut===q)L*=.25+.75*ql;else if(on&&G.cut!=null&&G.musd&&G.musd[q]===G.rnd)L*=.45+.55*(1-ql);
+ if(dn===0)L*=.08+.92*ql;else if(dn===1)L*=.3+.7*ql;else if(dn===2)L*=.65+.35*ql;else if(dn>=3)L*=.65+.35*(1-ql);/* quedarse con 4 o 3 cartas = mano hecha; tirar 3-4 = mano floja */
+ if(G.cut===q)L*=.15+.85*ql;else if(on&&G.cut!=null&&G.musd&&G.musd[q]===G.rnd)L*=.4+.6*(1-ql);/* quien corta tiene algo; quien dijo mus justo antes del corte, menos */
  return L}
 const _wpi=wpi;wpi=(p,...a)=>{G.ep=p;return _wpi(p,...a)};
+/* ---- IA nueva (nivel perfecto): reglas de jugadores humanos + probabilidades + marcador ---- */
+const pos=p=>ord(G.mano).indexOf(p);
+function hvp(h,P){const pr=pares(h);return sc('Grande',h)+.5*sc('Chica',h)+(P>=1?1.6:1.2)*(pr?[0,.7,1.1,1.5][pr.t]:0)+(P==0?2.4:1.3)*(jv(h)?jstr(h)/8+.3:sum(h)/60)}
+function bestDisc(p,N){const h=G.h[p],P=pos(p),ks=new Set(h.map(x=>x.v+'-'+x.s)),un=[];
+ for(let s=0;s<4;s++)for(const v of[1,2,3,4,5,6,7,10,11,12])if(!ks.has(v+'-'+s))un.push({v,s});
+ let bi=[],bv=-1;
+ for(let m=0;m<16;m++){const dis=[0,1,2,3].filter(i=>m>>i&1);
+  if(dis.some(i=>rk(h[i].v)==12||(P<3&&h[i].v==11)))continue;
+  const keep=h.filter((_,i)=>!(m>>i&1)),nd=dis.length;let tot=0;
+  if(!nd)tot=hvp(h,P);else{for(let t=0;t<N;t++)tot+=hvp(keep.concat(shuf([...un]).slice(0,nd)),P);tot/=N}
+  if(tot>bv+1e-9){bv=tot;bi=dis}}
+ return{idx:bi,v:bv}}
+function aiDisc(p){const h=G.h[p];if(sum(h)==31)return[];return bestDisc(p,60).idx}
+function aiMus(p){const h=G.h[p],P=pos(p),r=rks(h),k=v=>r.filter(x=>x==v).length,K=k(12),A=k(1),pr=pares(h),J=jv(h),s=sum(h);
+ if(Math.max(G.s[0],G.s[1])>=30)return'nomus';
+ const du=pr&&pr.t==3,md=pr&&pr.t>=2;
+ if(P==0)return(s==31||(J&&pr)||du||K>=3||A>=3)?'nomus':'mus';
+ if(P==2)return((du&&K>=2)||K==4)?'nomus':'mus';
+ if(P==1)return(s==31||(J&&pr)||md||(K>=2&&s>=26)||A>=3)?'nomus':'mus';
+ return(pr||J||K>=2||A>=3||s>=28)?'nomus':'mus'}
+function aiAct(p,n,mode,amt){
+ const t=tm(p),me=G.s[t],op=G.s[1-t],P=pos(p),W=(a,b)=>gwin(me+a,op+b),g=gwin(me,op),mx=Math.max(me,op);
+ const w=wpi(p,n,500,true,true),adv=k=>Math.max(0,w-k*Math.min(1,3*(1-w))),pa=pAcc(p,true);
+ const [Em,Eo]=(n=='Pares'||n=='Juego')?exv(p,n):[0,0],low=n=='Chica'?1.6:n=='Punto'?2:1;
+ const lam=(.0018+.0027*(1-Math.min(1,mx/27)))*low,best=o=>Object.entries(o).sort((a,b)=>b[1]-a[1])[0][0];
+ const vWin=(S,x)=>x*W(S+Em,0)+(1-x)*W(0,S+Eo),vBet=(S,q)=>q*vWin(S,adv(.15))+(1-q)*W(1+Em,0)-lam*S;
+ const vOrd=q=>q*adv(.3)+(1-q)*W(1+Em,0)-(mx<22?.25:mx<30?.08:0);
+ /* marcador: ag>0 = prudencia (inicio o voy ganando), ag<0 = hay que arriesgar (voy perdiendo o el rival esta cerca de 40) */
+ const ag=(mx<14?.06:0)+(me-op>=10?.06:0)-(op-me>=10?.08:0)-(op>=32&&op>me?.08:0)-(op>=36&&op>me?.06:0)+(me>op&&me>=28?(me>=33?.16:.1):0);/* cerca de ganar y por delante: proteger, no exponerse a subidas/ordagos */
+ const lead=me>op&&me>=28;
+ const un=n=='Juego'&&sum(G.h[p])==31,pri=n=='Juego'&&(G.dec.Juego||[]).some(q=>tm(q)!=t&&pos(q)<P);
+ if(mode=='open'){
+  const o={paso:(n=='Pares'||n=='Juego')?vWin(0,w):vWin(1,w),ordago:vOrd(pa*.4)};
+  for(const s of(n=='Grande'||n=='Chica')?[2,3]:[2,3,5])o['e'+s]=vBet(s,pa*(s>=5?.85:s>=3?.92:1));
+  if(w<.3)delete o.ordago;
+  if(lead&&w<.93)delete o.ordago;
+  if(lead&&w<.55){delete o.e2;delete o.e3;delete o.e5}
+  if(ag>=.06){delete o.e5;if(ag>=.12)delete o.e3;if(w<.8)delete o.ordago}
+  if(pri){delete o.e5;if(!un){delete o.e2;delete o.e3;if(g>.2)delete o.ordago}}
+  return best(o)}
+ const c=Math.max(1,G.cur||0),vd=W(0,c+Eo),sel=amt=='O'?.1:.08+.03*amt,wr=Math.max(0,w-sel-ag*.5),advr=k=>Math.max(0,wr-k*Math.min(1,3*(1-wr)));/* quien envida sabe que tiene algo: descuento por seleccion */
+ if(amt=='O')return wr>vd?'quiero':'no';
+ const o={quiero:vWin(amt,wr),no:vd};if(wr>=(lead?.9:.35))o.ordago=vOrd(pa*.4);
+ /* subir: solo con mano claramente fuerte; la 2a subida exige aun mas; 5 solo sobre apuestas pequeñas */
+ if(!pri&&(G.nr||0)<2&&wr>=((G.nr||0)?.72:.6)+ag)for(const k of[2,3,5])if(amt+k<=12&&(k<5||(amt<=2&&wr>=.88)))o['r'+k]=pa*.85*vWin(amt+k,advr(.2))+(1-pa*.85)*W(amt+Em,0)-lam*k;
+ return best(o)}
+async function betting(n,el){
+ G.nr=0;let first=null,kind;
+ for(const p of el){const a=await act(p,n,'open',0);if(a=='paso'){say(p,'Paso');continue}first=p;kind=a;break}
+ if(first===null)return{t:'pass'};
+ let owner=first,cur=0,pend=kind=='ordago'?'O':+kind.slice(1);
+ say(owner,pend=='O'?'¡ÓRDAGO!':'Envido '+pend);
+ while(true){
+  const rs=ord((owner+1)%4).filter(p=>el.includes(p)&&tm(p)!=tm(owner));
+  let a='no',r=rs[0];
+  for(let i=0;i<rs.length;i++){const q=rs[i];r=q;G.cur=cur;G.bettor=owner;a=await act(q,n,'resp',pend,owner);
+   if(a=='quiero'&&pend!='O'&&i==0&&rs.length>1){G.cur=cur;G.bettor=owner;const b=await act(rs[1],n,'resp',pend,owner);if(b[0]=='r'||b=='ordago'){r=rs[1];a=b}}
+   if(a!='no')break;say(q,'No quiero')}
+  if(a=='no'){await sleep(600);return{t:'dec',team:tm(owner),pts:Math.max(cur,1)}}
+  if(a=='quiero'){say(r,'¡Quiero!');await sleep(600);return pend=='O'?{t:'ord'}:{t:'acc',n:pend}}
+  if(a=='ordago'){say(r,'¡ÓRDAGO!');cur=pend;pend='O';owner=r;continue}
+  const k=+a.slice(1);G.nr++;say(r,`Subo ${k} más`);cur=pend;pend+=k;owner=r}}
 const _act=act;act=async(p,n,mode,amt,owner)=>{const a=(p==0&&G.auto)?aiAct(p,n,mode,amt):await _act(p,n,mode,amt,owner);(G.pub[n]=G.pub[n]||{})[p]=a;const s=ST(p);if(mode=='open'){s.o++;if(a!='paso')s.b++}else{s.r++;if(a!='no')s.a++}return a};
 const _bt=betting;betting=async(n,el)=>{const x=await _bt(n,el);if(x.t=='acc'||x.t=='ord')G.shown.push([G.bettor,n]);return x};
 const _cm=cambia;cambia=(p,i)=>{if(p==G.mano)G.rnd=(G.rnd||0)+1;G.dn[p]=i.length;_cm(p,i)};
 const _sy=say;say=(p,t)=>{if(t=='No hay mus')G.cut=p;if(t=='Mus'){G.musd=G.musd||[];G.musd[p]=G.rnd||0}_sy(p,t)};
 const _sm=summary;summary=async()=>{G.shown.forEach(([p,n])=>{const s=ST(p);s.s++;if(sc(n,G.h[p])<.35)s.u++});return _sm()};
 nuevosRivales();pintaDif();
-if('serviceWorker' in navigator)navigator.serviceWorker.register('service-worker.js').catch(()=>{});
+</script><script>if('serviceWorker' in navigator)navigator.serviceWorker.register('service-worker.js').catch(()=>{});</script>
 </script></body></html>
