@@ -11,6 +11,6 @@ Todo el juego esta en `index.html`. Funciona sin internet una vez abierto.
 3. Abre `https://TU_USUARIO.github.io/NOMBRE_REPO/` una vez con internet e instalalo
    (Android: menu > Instalar aplicacion. iPhone: Compartir > Anadir a pantalla de inicio).
 
-Al subir cambios, sube el numero de `vr-mus-v8` en `service-worker.js` en `service-worker.js` para que los moviles actualicen.
+Al subir cambios, sube el numero de `vr-mus-v9` en `service-worker.js` en `service-worker.js` para que los moviles actualicen.
 
 App ID: `/vr-mus` (manifest id, never change it)
