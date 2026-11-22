@@ -41,8 +41,7 @@ button:active{background:#e0d6a8}
 .seat{padding:4px}.seat .bk{width:13px;height:20px;border:1px solid #fff}.mini{min-height:22px;margin:2px 0}.seat .mc{width:14px;height:21px}.ml{min-height:1.4em}#bar{font-size:1.15rem;padding:4px 10px}#bar b{font-size:1.55rem}.jv{font-size:.85rem;white-space:nowrap;min-height:1.7em;display:flex;justify-content:center;align-items:center;gap:8px}.seat .bk{width:16px;height:24px}.acts{display:flex;flex-wrap:wrap;gap:8px;width:100%;justify-content:center}.act{background:#0006;border-radius:12px;padding:6px 12px;font-size:1.35rem;font-weight:800;line-height:1.2;white-space:nowrap}.act b{font-weight:600;font-size:1rem;opacity:.85;margin-right:6px}.act.me{outline:3px solid #fff}.chip.cur{outline:3px solid #fff}#modal{display:none;position:fixed;inset:0;background:#000b;align-items:center;justify-content:center;z-index:20;padding:16px}.mbox{background:var(--panel);border-radius:18px;padding:22px;max-width:440px;width:100%;text-align:center;display:flex;flex-direction:column;gap:14px}.mt{font-size:1.9rem;font-weight:800;line-height:1.3}#dif{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:auto 1rem 12px}#menu #dif button{margin:0;min-height:3rem;font-size:1rem;padding:.3rem;background:#0004;color:#fff}#menu #dif button.on{background:#f5efd8;color:#222;outline:3px solid #fff}
 #game{position:relative}#cartel{display:none;position:absolute;left:50%;top:40%;transform:translate(-50%,-50%);z-index:15;width:min(88%,420px);background:var(--panel);border:3px solid #ffd54a;border-radius:18px;padding:14px 16px;text-align:center;font-size:1.35rem;font-weight:800;line-height:1.25;box-shadow:0 6px 24px #0008;pointer-events:none}
 #btns{height:calc(8rem + 8px)}#btns.bet{grid-template-rows:4.6rem 3.4rem}#btns.bet button{min-height:0}#btns.bet .big,#btns.bet .env{font-size:1.6rem;font-weight:800}#btns.bet .cnt b{font-size:2.1rem}#btns.bet .cnt button{width:3rem;height:100%}#btns.bet .og{font-size:1.2rem}#btns.bet button{white-space:nowrap}#btns.bet .env{font-size:1.45rem}#btns.bet button{font-size:1.3rem}#btns.bet .cnt button{font-size:1.8rem}#btns.bet .env{background:#ffd54a;color:#222}
-</style></style><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#1f6b3a"><link rel="apple-touch-icon" href="icons/icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Mus"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-</head><body>
+</style></head><body>
 <div id="menu">
 <h1>🃏 Mus</h1>
 <p class="s" id="vs" style="font-size:1.6rem"></p>
@@ -143,7 +142,7 @@ function add(t,p){G.s[t]+=p;render();if(G.s[t]>=40)throw'fin'}
 function draw(){if(!G.deck.length){G.deck=shuf(G.disc);G.disc=[]}return G.deck.pop()}
 const sortH=h=>h.sort((a,b)=>rk(b.v)-rk(a.v)||a.s-b.s);
 async function humanDisc(){G.sel=[];G.dm=true;
- await ask('',[['ok',()=>G.sel.length?`Cambiar ${G.sel.length} carta${G.sel.length>1?'s':''}`:'No cambiar ninguna']]);
+ do{await ask('',[['ok',()=>G.sel.length?`Cambiar ${G.sel.length} carta${G.sel.length>1?'s':''}`:'Elige qué tiras']])}while(!G.sel.length);/* con mus hay que tirar al menos una carta */
  G.dm=false;const s=[...G.sel];G.sel=[];return s}
 
 
@@ -151,7 +150,7 @@ async function humanDisc(){G.sel=[];G.dm=true;
 
 async function ronda(){
  G.deck=shuf((()=>{const d=[];for(let s=0;s<4;s++)for(const v of[1,2,3,4,5,6,7,10,11,12])d.push({v,s});return d})());
- G.disc=[];G.rev=false;G.say=[];G.h=[[],[],[],[]];G.rows=[];G.ordago=false;G.has=[];G.pub={};G.dn=[null,null,null,null];G.cut=null;G.shown=[];G.dec={};G.musd=[];G.rnd=0;
+ G.disc=[];G.rev=false;G.say=[];G.h=[[],[],[],[]];G.rows=[];G.ordago=false;G.has=[];G.pub={};G.pm={};G.dn=[null,null,null,null];G.cut=null;G.shown=[];G.dec={};G.musd=[];G.rnd=0;
  for(let i=0;i<4;i++)for(const p of ord(G.mano))G.h[p].push(G.deck.pop());
  G.h.forEach(sortH);
  info('');await sleep(900);
@@ -221,7 +220,7 @@ function nuevosRivales(){const pl=shuf(['Adrián','Alejandro','Justo','Daniel','
 
 const JV=2; /* juegos que hay que ganar para llevarse una vaca (al mejor de 3) */
 async function jugar(d){
- G={d,s:[0,0],mano:Math.random()*4|0,h:[[],[],[],[]],say:[],opts:[],msg:'',sel:[],rev:false,dm:false,j:[0,0],v:[0,0],rows:[]};
+ G={d,s:[0,0],mano:Math.random()*4|0,h:[[],[],[],[]],say:[],opts:[],msg:'',sel:[],rev:false,dm:false,j:[0,0],v:[0,0],rows:[]};G.sty=[0,1,2,3].map(()=>randStyle());
  $('menu').style.display='none';$('game').style.display='flex';render();
  while(true){
   try{while(true){await ronda();G.mano=(G.mano+1)%4}}catch(e){if(e!=='fin')throw e}
@@ -231,7 +230,7 @@ async function jugar(d){
    if(r=='reset'){G.v=[0,0]}
    G.j=[0,0]}
   else await modal(`<b>Juego para ${W[t]}</b><br>Juegos: Nosotros ${G.j[0]} – Ellos ${G.j[1]}`,[['ok','Siguiente juego']]);
-  G.s=[0,0];G.h=[[],[],[],[]]}}
+  G.s=[0,0];G.h=[[],[],[],[]];G.sty=[0,1,2,3].map(()=>randStyle())}}
 function betUI(){const b=G.bet,o=b.mode=='open',s=n=>`style="grid-column:span ${n}"`;
  const og=`<button class="og" ${s(o?2:2)} onclick="pick('ordago')">¡Órdago!</button>`;
  const c=`<div class="cnt" ${s(o?3:2)}><button onclick="cnt(-1)">−</button><b>${b.n}</b><button onclick="cnt(1)">+</button></div>`;
@@ -297,8 +296,19 @@ function exv(p,L){const dl=(G.dec&&G.dec[L])||[],t=tm(p);let a=0,b=0;
  for(const q of dl){const v=q==p?(L=='Pares'?pares(G.h[p]).t:(sum(G.h[p])==31?3:2)):(L=='Pares'?1.4:2.4);if(tm(q)==t)a+=v;else b+=v}return[a,b]}
 
 /* lo que se deduce del mus: cuantas cartas cambio cada uno y quien dijo mus justo antes del corte */
+/* ---- percentil de una mano en un lance (tabla precalculada con un generador propio, no toca el azar del juego) ---- */
+const PCT={};
+function pkey(n,h){return n=='Grande'?grande(h):n=='Chica'?chica(h):n=='Pares'?(pares(h)?pares(h).s:-1):n=='Juego'?(jv(h)?jstr(h):-1):sum(h)}
+function pctl(n,h){if(n=='Punto')n='PuntoX';let T=PCT[n];if(!T){let z=12345;const rnd=()=>(z=(z*1664525+1013904223)>>>0)/4294967296;const deck=[];for(let sd=0;sd<4;sd++)for(const v of[1,2,3,4,5,6,7,10,11,12])deck.push({v,s:sd});
+  const nn=n=='PuntoX'?'Punto':n;T=[];for(let i=0;i<20000;i++){const d=deck.slice();for(let j=39;j>35;j--){const k=rnd()*(j+1)|0;[d[j],d[k]]=[d[k],d[j]]}T.push(pkey(nn,d.slice(36)))}T.sort((a,b)=>a-b);PCT[n]=T}
+ const k=pkey(n=='PuntoX'?'Punto':n,h);let lo=0,hi=T.length;while(lo<hi){const m=lo+hi>>1;if(T[m]<k)lo=m+1;else hi=m}let a=lo;hi=T.length;while(lo<hi){const m=lo+hi>>1;if(T[m]<=k)lo=m+1;else hi=m}return(a+lo)/2/T.length}
+const TB={"Grande|open":{"bet":[17,40,69,140,868],"paso":[710,676,680,630,137],"ordago":[53,54,60,76,137]},"Grande|resp":{"no":[694,676,635,460,107],"quiero":[18,9,13,183,262],"raise":[0,0,0,3,86],"ordago":[0,1,0,11,24]},"Chica|open":{"paso":[1004,834,918,793,359],"bet":[57,34,64,86,535],"ordago":[45,40,73,68,135]},"Pares|open":{"bet":[0,0,92,224,750],"paso":[0,0,309,322,15],"ordago":[0,0,19,50,72]},"Pares|resp":{"no":[0,0,508,509,120],"quiero":[0,0,50,128,261],"ordago":[0,0,1,6,42],"raise":[0,0,0,1,62]},"Juego|open":{"paso":[0,0,0,133,107],"ordago":[0,0,0,1,43],"bet":[0,0,0,10,300]},"Punto|open":{"paso":[155,212,172,77,0],"ordago":[5,12,22,30,0],"bet":[7,9,18,67,0]},"Chica|resp":{"quiero":[8,14,32,121,188],"no":[573,490,445,294,108],"raise":[0,0,0,2,49],"ordago":[0,0,1,6,18]},"Juego|resp":{"no":[0,0,0,120,165],"quiero":[0,0,0,4,88],"ordago":[0,0,0,0,4],"raise":[0,0,0,1,0]},"Punto|resp":{"no":[70,98,72,26,0],"quiero":[6,8,23,35,0],"ordago":[0,0,1,3,0],"raise":[0,0,1,6,0]}};
+function pact(n,mode,a){const t=TB[n+'|'+mode];if(!t)return null;const c=mode=='open'?(a=='paso'?'paso':a=='ordago'?'ordago':'bet'):(a=='no'?'no':a=='quiero'?'quiero':a=='ordago'?'ordago':'raise');return[t,c]}
+function plik(n,mode,a,h){const z=pact(n,mode,a);if(!z)return null;const[t,c]=z,b=Math.min(4,Math.floor(pctl(n,h)*5));let tot=0;for(const k in t)tot+=t[k][b];const x=t[c]?t[c][b]:0;return(x+.5)/(tot+2)}
 function lik(n,q,h,mod){const st=ST(q),br=mod?(st.u+1)/(st.s+12):.08,on=!G.flag||G.flag[tm(G.ep)];let L=1;
  for(const m in G.pub){const pb=G.pub[m][q];if(!pb)continue;const s=sc(m,h);
+  const pl=(G.pm&&G.pm[m]&&G.pm[m][q])?plik(m,G.pm[m][q],pb,h):null;/* tablas aprendidas de partidas bot contra bot: P(accion | fuerza de mano) */
+  if(pl!=null){L*=Math.max(.02,pl)}else
   if(pb=='paso')L*=.3+.7*(1-s);else if(pb=='no')L*=.2+.8*(1-s);else if(pb=='quiero')L*=.25+.75*s;else L*=br+(1-br)*(.12+.88*s)}
  const ql=Math.max(sc('Grande',h),sc('Chica',h),sc('Pares',h),sc('Juego',h)),dn=G.dn[q];
  if(dn===0)L*=.08+.92*ql;else if(dn===1)L*=.3+.7*ql;else if(dn===2)L*=.65+.35*ql;else if(dn>=3)L*=.65+.35*(1-ql);/* quedarse con 4 o 3 cartas = mano hecha; tirar 3-4 = mano floja */
@@ -308,41 +318,57 @@ const _wpi=wpi;wpi=(p,...a)=>{G.ep=p;return _wpi(p,...a)};
 /* ---- IA nueva (nivel perfecto): reglas de jugadores humanos + probabilidades + marcador ---- */
 const pos=p=>ord(G.mano).indexOf(p);
 function hvp(h,P){const pr=pares(h);return sc('Grande',h)+.5*sc('Chica',h)+1.6*(pr?[0,.7,1.1,1.5][pr.t]:0)+(P==0?2.4:1.3)*(jv(h)?jstr(h)/8+.3:sum(h)/60)}
-function bestDisc(p,N){const h=G.h[p],P=pos(p),ks=new Set(h.map(x=>x.v+'-'+x.s)),un=[];
+function bestDisc(p,N,force,free){const h=G.h[p],P=pos(p);
+ {const ai=[0,1,2,3].filter(i=>rk(h[i].v)==1);if(ai.length==3)return{idx:[[0,1,2,3].find(i=>!ai.includes(i))],v:1}}/* tres pitos: se tira la otra carta (sea la que sea) buscando el cuarto as */
+ const ks=new Set(h.map(x=>x.v+'-'+x.s)),un=[];
  for(let s=0;s<4;s++)for(const v of[1,2,3,4,5,6,7,10,11,12])if(!ks.has(v+'-'+s))un.push({v,s});
  let bi=[],bv=-1;
  for(let m=0;m<16;m++){const dis=[0,1,2,3].filter(i=>m>>i&1);
-  if(dis.some(i=>rk(h[i].v)==12||(P<3&&h[i].v==11)))continue;
+  if(force&&!m)continue;
+  if(!free&&dis.some(i=>rk(h[i].v)==12||(P<3&&h[i].v==11)))continue;
   const keep=h.filter((_,i)=>!(m>>i&1)),nd=dis.length;let tot=0;
   if(!nd)tot=hvp(h,P);else{for(let t=0;t<N;t++)tot+=hvp(keep.concat(shuf([...un]).slice(0,nd)),P);tot/=N}
   if(tot>bv+1e-9){bv=tot;bi=dis}}
+ if(force&&!bi.length&&!free)return bestDisc(p,N,true,true);/* mano solo de reyes/caballos: algo hay que tirar */
  return{idx:bi,v:bv}}
-function aiDisc(p){const h=G.h[p];if(sum(h)==31)return[];return bestDisc(p,60).idx}
-function aiMus(p){const h=G.h[p],P=pos(p),r=rks(h),k=v=>r.filter(x=>x==v).length,K=k(12),A=k(1),pr=pares(h),J=jv(h),s=sum(h);
+function aiDisc(p){const h=G.h[p];if(sum(h)==31)return[];return bestDisc(p,60,true).idx}/* dado el mus hay que tirar al menos una carta; si no se quiere tirar, se corta */
+function aiMus(p){if(G.h[p].filter(c=>rk(c.v)==1).length==3&&Math.max(G.s[0],G.s[1])<30)return'mus';/* tres pitos: siempre mus, a por el cuarto as */
+ const d=aiMus0(p);if(d=='nomus')return d;return bestDisc(p,40).idx.length?'mus':'nomus'}/* si lo mejor es no cambiar nada, se corta */
+function aiMus0(p){const h=G.h[p],P=pos(p),r=rks(h),k=v=>r.filter(x=>x==v).length,K=k(12),A=k(1),pr=pares(h),J=jv(h),s=sum(h);
  if(Math.max(G.s[0],G.s[1])>=30)return'nomus';
  const du=pr&&pr.t==3,md=pr&&pr.t>=2;
  /* manos que cortan en cualquier posicion: 31, duples, juego con pares, medias con reyes, tres reyes */
  const S=s==31||du||(J&&pr)||(md&&K>=2)||K>=3;
- if(P==0)return(S||A>=3||(md&&K>=1))?'nomus':'mus';
+ if(P==0)return(S||(md&&K>=1))?'nomus':'mus';
  if(P==2)return S?'nomus':'mus';
- if(P==1)return(S||md||(K>=2&&s>=26)||A>=3)?'nomus':'mus';
- return(S||md||(pr&&K>=1)||(J&&K>=1)||(K>=2&&(pr||J))||A>=3)?'nomus':'mus'}
-function aiAct(p,n,mode,amt){
- const t=tm(p),me=G.s[t],op=G.s[1-t],P=pos(p),W=(a,b)=>gwin(me+a,op+b),g=gwin(me,op),mx=Math.max(me,op);
+ if(P==1)return(S||md||(K>=2&&s>=26))?'nomus':'mus';
+ return(S||md||(pr&&K>=1)||(J&&K>=1)||(K>=2&&(pr||J)))?'nomus':'mus'}
+/* ---- estilo secreto de cada bot: se sortea al empezar cada juego (agresividad, farol, prudencia al aceptar, umbrales) ---- */
+const DEFSTY={agg:0,bl:1,cs:1,rt:0,ot:.38,og:.3,qt:0};
+const SY=p=>(G.sty&&G.sty[p])||DEFSTY;
+function randStyle(){const r=()=>Math.random(),g=()=>r()+r()+r()-1.5;return{agg:g()*.9,bl:Math.max(0,.4+1.2*r()),cs:.75+.5*r(),rt:0,ot:.38,og:.3,qt:0}}
+/* resultados posibles de los lances que quedan en esta mano (solo lo que se sabe de la propia mano): [prob, mis puntos, puntos del rival]; sirve para ver si merece la pena arriesgar la partida */
+function fut(p,n){const h=G.h[p],o=['Grande','Chica','Pares','Juego'],i=o.indexOf(n);let L=[[1,0,0]];
+ const add=(w,x,y)=>{L=L.flatMap(([q,a,b])=>[[q*w,a+x,b],[q*(1-w),a,b+y]])};
+ if(i>=0&&i<2&&pares(h))add(wpi(p,'Pares',150,true,true),pares(h).t,1.4);
+ if(i>=0&&i<3&&jv(h))add(wpi(p,'Juego',150,true,true),sum(h)==31?3:2,2.4);
+ return L}
+function aiAct(p,n,mode,amt){const S=SY(p);
+ const t=tm(p),me=G.s[t],op=G.s[1-t],P=pos(p),FU=fut(p,n),W=(a,b)=>FU.reduce((z,[q,x,y])=>z+q*gwin(me+a+x,op+b+y),0),g=gwin(me,op),mx=Math.max(me,op);
  const w=wpi(p,n,500,true,true),adv=k=>Math.max(0,w-k*Math.min(1,3*(1-w))),pa=pAcc(p,true);
  const [Em,Eo]=(n=='Pares'||n=='Juego')?exv(p,n):[0,0],low=n=='Chica'?1.6:n=='Punto'?2:1;
  const lam=(.0018+.0027*(1-Math.min(1,mx/27)))*low,best=o=>Object.entries(o).sort((a,b)=>b[1]-a[1])[0][0];
  const vWin=(S,x)=>x*W(S+Em,0)+(1-x)*W(0,S+Eo),vBet=(S,q)=>q*vWin(S,adv(.15))+(1-q)*W(1+Em,0)-lam*S;
  const vOrd=q=>q*adv(.3)+(1-q)*W(1+Em,0)-(mx<22?.25:mx<30?.08:0);
  /* marcador: ag>0 = prudencia (inicio o voy ganando), ag<0 = hay que arriesgar (voy perdiendo o el rival esta cerca de 40) */
- const ag=(mx<14?.06:0)+(me-op>=10?.06:0)-(op-me>=10?.08:0)-(op>=32&&op>me?.08:0)-(op>=36&&op>me?.06:0)+(me>op&&me>=28?(me>=33?.16:.1):0);/* cerca de ganar y por delante: proteger, no exponerse a subidas/ordagos */
+ const ag=(mx<14?.06:0)+(me-op>=10?.06:0)-(op-me>=10?.08:0)-(op>=32&&op>me?.08:0)-(op>=36&&op>me?.06:0)+(me>op&&me>=28?(me>=33?.16:.1):0)-.07*S.agg;/* cerca de ganar y por delante: proteger, no exponerse a subidas/ordagos */
  const lead=me>op&&me>=28;
  const un=n=='Juego'&&sum(G.h[p])==31,pri=n=='Juego'&&(G.dec.Juego||[]).some(q=>tm(q)!=t&&pos(q)<P);
  if(mode=='open'){
   const o={paso:(n=='Pares'||n=='Juego')?vWin(0,w):vWin(1,w),ordago:vOrd(pa*.4)};
   for(const s of(n=='Grande'||n=='Chica')?[2,3]:[2,3,5])o['e'+s]=vBet(s,pa*(s>=5?.85:s>=3?.92:1));
-  if(w<.3)delete o.ordago;
-  if(w<.38){delete o.e2;delete o.e3;delete o.e5}/* sin farol sin sentido */
+  if(w<S.og)delete o.ordago;
+  if(w<S.ot){delete o.e2;delete o.e3;delete o.e5}/* sin farol sin sentido */
   if(op>=32&&op>me&&w<.6){delete o.e2;delete o.e3;delete o.e5}/* el rival esta a punto de ganar: o orgago o paso, nunca envites pequeños */
   if(lead&&w<.93)delete o.ordago;
   if(lead&&w<.55){delete o.e2;delete o.e3;delete o.e5}
@@ -352,14 +378,14 @@ function aiAct(p,n,mode,amt){
   /* probabilidad de que ambos rivales se retiren: su estilo (ST) ajustado por lo que han hecho en el mus (tirar 3-4 cartas = mano floja, quedarse con las 4 o cortar = mano hecha) */
   const fa=q=>{const x=ST(q);let a=(x.a+4)/(x.r+6.15);const d=G.dn&&G.dn[q];if(d>=3)a*=.55;else if(d===0)a*=1.3;if(G.cut===q)a*=1.25;return Math.min(.95,a)};
   const pf=[0,1,2,3].filter(q=>tm(q)!=t).reduce((m,q)=>m*(1-fa(q)),1);
-  const bl=(n=='Grande'||n=='Chica'||n=='Punto')&&w>=.15&&w<.38&&pf>=.3&&!lead&&!(op>=32&&op>me)&&Math.random()<(.5+(P==0?.15:0));
+  const bl=(n=='Grande'||n=='Chica'||n=='Punto')&&w>=.15&&w<.38&&pf>=.3&&!lead&&!(op>=32&&op>me)&&Math.random()<(.5+(P==0?.15:0))*S.bl;
   if(bl&&!pri&&!o.ordago)return'e2';
   return best(o)}
- const c=Math.max(1,G.cur||0),vd=W(0,c+Eo),sel=amt=='O'?.1:.08+.03*amt,wr=Math.max(0,w-sel-ag*.5),advr=k=>Math.max(0,wr-k*Math.min(1,3*(1-wr)));/* quien envida sabe que tiene algo: descuento por seleccion */
+ const c=Math.max(1,G.cur||0),vd=W(0,c+Eo),sel=(amt=='O'?.1:.08+.03*amt)*S.cs-S.qt,wr=Math.max(0,w-sel-ag*.5),advr=k=>Math.max(0,wr-k*Math.min(1,3*(1-wr)));/* quien envida sabe que tiene algo: descuento por seleccion */
  if(amt=='O')return wr>vd?'quiero':'no';
  const o={quiero:vWin(amt,wr),no:vd};if(wr>=(lead?.9:.35))o.ordago=vOrd(pa*.4);
  /* subir: solo con mano claramente fuerte; la 2a subida exige aun mas; 5 solo sobre apuestas pequeñas */
- if(!pri&&(G.nr||0)<2&&wr>=((G.nr||0)?.72:.6)+ag)for(const k of[2,3,5])if(amt+k<=12&&(k<5||(amt<=2&&wr>=.88)))o['r'+k]=pa*.85*vWin(amt+k,advr(.2))+(1-pa*.85)*W(amt+Em,0)-lam*k;
+ if(!pri&&(G.nr||0)<2&&wr>=((G.nr||0)?.72:.6)+ag+S.rt)for(const k of[2,3,5])if(amt+k<=12&&(k<5||(amt<=2&&wr>=.88)))o['r'+k]=pa*.85*vWin(amt+k,advr(.2))+(1-pa*.85)*W(amt+Em,0)-lam*k;
  return best(o)}
 async function betting(n,el){
  G.nr=0;let first=null,kind;
@@ -377,11 +403,10 @@ async function betting(n,el){
   if(a=='quiero'){say(r,'¡Quiero!');await sleep(600);return pend=='O'?{t:'ord'}:{t:'acc',n:pend}}
   if(a=='ordago'){say(r,'¡ÓRDAGO!');cur=pend;pend='O';owner=r;continue}
   const k=+a.slice(1);G.nr++;say(r,`Subo ${k} más`);cur=pend;pend+=k;owner=r}}
-const _act=act;act=async(p,n,mode,amt,owner)=>{const a=(p==0&&G.auto)?aiAct(p,n,mode,amt):await _act(p,n,mode,amt,owner);(G.pub[n]=G.pub[n]||{})[p]=a;const s=ST(p);if(mode=='open'){s.o++;if(a!='paso')s.b++}else{s.r++;if(a!='no')s.a++}return a};
+const _act=act;act=async(p,n,mode,amt,owner)=>{const a=(p==0&&G.auto)?aiAct(p,n,mode,amt):await _act(p,n,mode,amt,owner);(G.pub[n]=G.pub[n]||{})[p]=a;(G.pm=G.pm||{});(G.pm[n]=G.pm[n]||{})[p]=mode;const s=ST(p);if(mode=='open'){s.o++;if(a!='paso')s.b++}else{s.r++;if(a!='no')s.a++}return a};
 const _bt=betting;betting=async(n,el)=>{const x=await _bt(n,el);if(x.t=='acc'||x.t=='ord')G.shown.push([G.bettor,n]);return x};
 const _cm=cambia;cambia=(p,i)=>{if(p==G.mano)G.rnd=(G.rnd||0)+1;G.dn[p]=i.length;_cm(p,i)};
 const _sy=say;say=(p,t)=>{if(t=='No hay mus')G.cut=p;if(t=='Mus'){G.musd=G.musd||[];G.musd[p]=G.rnd||0}_sy(p,t)};
 const _sm=summary;summary=async()=>{G.shown.forEach(([p,n])=>{const s=ST(p);s.s++;if(sc(n,G.h[p])<.35)s.u++});return _sm()};
 nuevosRivales();pintaDif();
-</script><script>if('serviceWorker' in navigator)navigator.serviceWorker.register('service-worker.js').catch(()=>{});</script>
 </script></body></html>
